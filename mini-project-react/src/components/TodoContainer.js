@@ -35,9 +35,9 @@ class TodoContainer extends Component {
   render() {
     return (
       <section>
-        <AddTodo updateTodos={this.updateTodos.todos}/>
+        <AddTodo updateTodos={this.updateTodos} />
         {this.state.todos.map(todo => {
-          return <TodoCard todo={todo} key={todo.title}/>
+          return <TodoCard todo={todo} key={todo.title} />
         })}
       </section>
     )
