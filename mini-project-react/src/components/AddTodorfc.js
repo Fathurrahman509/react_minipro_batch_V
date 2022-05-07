@@ -1,12 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './AddTodo.css'
 
-const AddTodorfc = () => {
+const AddTodorfc = ({handleAddTodo}) => {
+
+    const [todoTitle, setTodoTitle] = useState('')
+    const [todoDescription, setTodoDescription] = useState('')
+
+    const handleTitle = (e) => {
+        setTodoTitle(e.target.value)
+    }
+
+    const handleDescription = (e) => {
+        setTodoDescription(e.target.value)
+    }
+
+    const handleAdd = () => {
+        console.log('title', todoTitle)
+        console.log('description', todoDescription)
+        const newTodo = {
+            title: todoTitle,
+            description: todoDescription
+        }
+        handleAddTodo(newTodo)
+    }
+
+
     return (
         <div className='add-todo-container'>
-            <input value={this.state.title} onChange={(event) => this.updateTitle(event)} className='add-todo-title' type='text' placeholder='Todo Title'></input>
-            <input value={this.state.description} onChange={(event) => this.updateDescription(event)} className='add-todo-description' type='text' placeholder='Todo Description'></input>
-            <button onClick={this.clickAdd} className='add-todo-button'>Add</button>
+            <input value={todoTitle} onChange={e => handleTitle(e)} className='add-todo-title' type='text' placeholder='Todo Title'></input>
+            <input value={todoDescription} onChange={e => handleDescription(e)} className='add-todo-description' type='text' placeholder='Todo Description'></input>
+            <button onClick={handleAdd} className='add-todo-button'>Add</button>
         </div>
     )
 }
