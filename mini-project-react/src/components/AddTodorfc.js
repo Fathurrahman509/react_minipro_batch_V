@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './AddTodo.css'
 
-const AddTodorfc = ({handleAddTodo}) => {
+const AddTodorfc = ({ handleAddTodo }) => {
 
     const [todoTitle, setTodoTitle] = useState('')
     const [todoDescription, setTodoDescription] = useState('')
@@ -24,12 +24,24 @@ const AddTodorfc = ({handleAddTodo}) => {
         handleAddTodo(newTodo)
     }
 
+    const handleSubmit = (e) => {
+        console.log('handle submit berhasill cuy');
+    }
 
     return (
         <div className='add-todo-container'>
-            <input value={todoTitle} onChange={e => handleTitle(e)} className='add-todo-title' type='text' placeholder='Todo Title'></input>
-            <input value={todoDescription} onChange={e => handleDescription(e)} className='add-todo-description' type='text' placeholder='Todo Description'></input>
-            <button onClick={handleAdd} className='add-todo-button'>Add</button>
+            <form onSubmit={handleSubmit} >
+                <label>
+                    Title:
+                    <input value={todoTitle} onChange={e => handleTitle(e)} className='add-todo-title' type='text' placeholder='Todo Title'></input>
+                </label>
+                <label>
+                    Description:
+                    <input value={todoDescription} onChange={e => handleDescription(e)} className='add-todo-description' type='text' placeholder='Todo Description'></input>
+                </label>
+                <button type="submit" className='add-todo-button'>Add</button>
+            </form>
+
         </div>
     )
 }
