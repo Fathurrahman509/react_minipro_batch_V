@@ -14,11 +14,7 @@ const TodoContainerrfc = () => {
             index: 1,
             title: 'learning Back End',
             description: 'learn mysql, nodejs, postman'
-        },
-        // {
-        //     title: 'learning Framework',
-        //     description: 'learn angular.js, vue.js, react.js'
-        // }
+        }
     ])
 
     // useEffect(() => {
@@ -33,7 +29,9 @@ const TodoContainerrfc = () => {
         const tempNewTodo = {
             index: todoList.length + 1,
             title: newTodo.title,
-            description: newTodo.description
+            description: newTodo.description,
+            priority: newTodo.priority,
+            note: newTodo.note
         }
         setTodoList([...todoList, tempNewTodo])
     }
