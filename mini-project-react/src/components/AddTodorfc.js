@@ -3,10 +3,10 @@ import './AddTodo.css'
 
 const AddTodorfc = ({ handleAddTodo }) => {
 
-    const [todoTitle, setTodoTitle] = useState('')
-    const [todoDescription, setTodoDescription] = useState('')
-    const [todoPriority, setTodoPriority] = useState('High')
-    const [todoNote, setTodoNote] = useState('')
+    // const [todoTitle, setTodoTitle] = useState('')
+    // const [todoDescription, setTodoDescription] = useState('')
+    // const [todoPriority, setTodoPriority] = useState('High')
+    // const [todoNote, setTodoNote] = useState('')
 
     const handleTitle = (e) => {
         const val = e.target.value;
@@ -51,7 +51,7 @@ const AddTodorfc = ({ handleAddTodo }) => {
             setTodoPriority('High')
             setTodoNote('')
         } else {
-            alert('Title is required')
+            alert('Di isi dulu bos. Jangan di biarkan kosong ntar malah diambil yang lain')
         }
         // console.log('handle submit berhasill cuy')
         // console.log('title', todoTitle)
@@ -84,9 +84,8 @@ const AddTodorfc = ({ handleAddTodo }) => {
                     Notes:
                     <textarea value={todoNote} onChange={handleNote} placeholder="e.g. learn basic react" />
                 </label>
-                <button type="submit" className='add-todo-button'>Add</button>
+                <button type="submit" className='edit-todo-button'>Save</button>
             </form>
-
         </div>
     )
 }

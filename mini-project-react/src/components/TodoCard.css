@@ -45,3 +45,45 @@ p {
     width: 80px;
     height: 30px;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+form label {
+    text-align: left;
+}
+
+form label input, select, textarea {
+    width: 450px;
+    float: right;
+}
+
+form label input, select {
+    height: 30px;
+}
+
+form label textarea {
+    height: 45px;
+}
+
+.edit-todo-button {
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bolder;
+    font-size: 16px;
+    color: rgb(15, 15, 87);
+    border: 1px solid rgb(15, 15, 87);
+    background-color: white;
+    transition: 0.3s;
+}
+
+.edit-todo-button:hover {
+    cursor: pointer;
+    background-color: rgb(15, 15, 87);
+    border: 1px solid rgb(15, 15, 87);
+    color: white;
+}

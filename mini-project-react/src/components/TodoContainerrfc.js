@@ -8,12 +8,16 @@ const TodoContainerrfc = () => {
         {
             index: 0,
             title: 'learning Front End',
-            description: 'learn html, javascript, css'
+            description: 'learn html, javascript, css',
+            priority: 'Medium',
+            note: 'no note'
         },
         {
             index: 1,
             title: 'learning Back End',
-            description: 'learn mysql, nodejs, postman'
+            description: 'learn mysql, nodejs, postman',
+            priority: 'Medium',
+            note: 'no noted ter'
         }
     ])
 
