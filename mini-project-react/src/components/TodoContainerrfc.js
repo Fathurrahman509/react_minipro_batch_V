@@ -23,7 +23,7 @@ const TodoContainerrfc = () => {
 
     const handleAddTodo = (newTodo) => {
         const tempNewTodo = {
-            index: todoList.length + 1,
+            index: todoList.length,
             title: newTodo.title,
             description: newTodo.description,
             priority: newTodo.priority,

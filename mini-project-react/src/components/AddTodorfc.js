@@ -3,10 +3,10 @@ import './AddTodo.css'
 
 const AddTodorfc = ({ handleAddTodo }) => {
 
-    // const [todoTitle, setTodoTitle] = useState('')
-    // const [todoDescription, setTodoDescription] = useState('')
-    // const [todoPriority, setTodoPriority] = useState('High')
-    // const [todoNote, setTodoNote] = useState('')
+    const [todoTitle, setTodoTitle] = useState('')
+    const [todoDescription, setTodoDescription] = useState('')
+    const [todoPriority, setTodoPriority] = useState('High')
+    const [todoNote, setTodoNote] = useState('')
 
     const handleTitle = (e) => {
         const val = e.target.value;
