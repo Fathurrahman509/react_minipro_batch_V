@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import './TodoCard.css'
 
-const TodoCardrfc = ({ todo, handleRemoveTodo }) => {
+const TodoCardrfc = ({ todo, handleRemoveTodo, handleEditTodo }) => {
   const [isEdit, setIsEdit] = useState(false)
 
   // for edit
+  const [todoIndex, setTodoIndex] = useState(-1)
   const [todoTitle, setTodoTitle] = useState('')
   const [todoDescription, setTodoDescription] = useState('')
   const [todoPriority, setTodoPriority] = useState('High')
   const [todoNote, setTodoNote] = useState('')
 
   useEffect(() => {
+    setTodoIndex(todo.index)
     setTodoTitle(todo.title)
     setTodoDescription(todo.description)
     setTodoPriority(todo.priority)
@@ -58,12 +60,15 @@ const handleSubmit = (e) => {
     e.preventDefault()
     if (handleValidation()) {
         const newTodo = {
+            index: todo.index,
             title: todoTitle,
             description: todoDescription,
             priority: todoPriority,
             note: todoNote
         }
-        handleAddTodo(newTodo)
+        // handleAddTodo(newTodo)
+        handleEditTodo(newTodo)
+        setIsEdit(false);
         setTodoTitle('')
         setTodoDescription('')
         setTodoPriority('High')

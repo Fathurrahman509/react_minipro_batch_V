@@ -21,14 +21,6 @@ const TodoContainerrfc = () => {
         }
     ])
 
-    // useEffect(() => {
-    //     console.log('hi i use first useeffect');
-    // },)
-
-    // useEffect(() => {
-    //     console.log('hi i use second useeffect', todoList.length);
-    // }, [todoList])
-
     const handleAddTodo = (newTodo) => {
         const tempNewTodo = {
             index: todoList.length + 1,
@@ -40,6 +32,13 @@ const TodoContainerrfc = () => {
         setTodoList([...todoList, tempNewTodo])
     }
 
+    const handleEditTodo = (editedTodo) => {
+        console.log('edit todo', editedTodo);
+        const newTodoList = todoList.splice(editedTodo.index, 1, editedTodo)
+        console.log('berhasil cuyy edit', newTodoList)
+        setTodoList(newTodoList)
+    }
+
     const handleRemoveTodo = (index) => {
         const newTodoList = todoList.filter(todo => todo.index !== index)
         setTodoList(newTodoList)
@@ -49,7 +48,7 @@ const TodoContainerrfc = () => {
         <section>
             <AddTodorfc handleAddTodo={handleAddTodo} />
             {todoList.map((todo, index) => {
-                return <TodoCardrfc key={index} todo={todo} handleRemoveTodo={handleRemoveTodo} />
+                return <TodoCardrfc key={index} todo={todo} handleRemoveTodo={handleRemoveTodo} handleEditTodo={handleEditTodo} />
             })}
         </section>
     )
